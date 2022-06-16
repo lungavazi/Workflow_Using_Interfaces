@@ -1,8 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-var OrderWorkflow = new OrderWorkflow();
-OrderWorkflow.AddOrderWorkflow(new CreateOrder());
-OrderWorkflow.AddOrderWorkflow(new ProcessOrder());
-OrderWorkflow.AddOrderWorkflow(new CompletingOrder());
-OrderWorkflow.Run();
+var OrderWorkflow = new Workflow();
+OrderWorkflow.AddWorkflow(new CreateOrder());
+OrderWorkflow.AddWorkflow(new ProcessOrder());
+OrderWorkflow.AddWorkflow(new CompletingOrder());
+
+var WorkflowEngine = new WorkflowEngine();
+WorkflowEngine.Run(OrderWorkflow);  
